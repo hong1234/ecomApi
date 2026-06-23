@@ -23,6 +23,10 @@ public class ProductService {
         // return product;  
     }
 
+    public List<Product> bestProducts(){
+        return productRepository.findByPrio(1);
+    }
+
     public List<Product> productsOfCategory(String category) {
         // return productRepository.productsOfCategory(category);
         return productRepository.findByCategory(category);

@@ -16,8 +16,9 @@ public class CartService {
     private final CartItemRepository cartRepository;
 
     public List<CartItem> getCartByUuid(String cartUuid){
-        return cartRepository.itemsInCart(cartUuid);
         // UUID.fromString('9d927bff-8d5b-4929-8c26-a9be00173adc')
+        // return cartRepository.itemsInCart(cartUuid);
+        return cartRepository.findByCartUuid(cartUuid);
     }
 
     public CartItem addCartItem(CartItemDTO dto) throws ProductServiceException {

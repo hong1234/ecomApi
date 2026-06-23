@@ -6,6 +6,7 @@ CREATE TABLE product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     -- item_code varchar(20) NOT NULL,
     product_uuid VARCHAR(50) NOT NULL,
+    prio INT NOT NULL,
     title VARCHAR(100) NOT NULL,
     descript VARCHAR(256) NOT NULL,
     searchkeys VARCHAR(256) NOT NULL,
@@ -44,9 +45,18 @@ create table cart_item (
     hemd_veo INT NOT NULL,
     hemd_vcotay INT NOT NULL,
     hemd_dvai INT NOT NULL,
-
     hemd_dtay INT NOT NULL,
     hemd_dao INT NOT NULL
+);
+
+create table cart_order (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cart_uuid VARCHAR(50) NOT NULL, 
+    customer_fname VARCHAR(100) NOT NULL,
+    customer_lname VARCHAR(100) NOT NULL,
+    customer_email VARCHAR(100) NOT NULL,
+    customer_fonnumber VARCHAR(100) NOT NULL,
+    customer_address VARCHAR(100) NOT NULL
 );
 
 

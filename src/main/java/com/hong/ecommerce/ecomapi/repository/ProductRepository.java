@@ -16,11 +16,12 @@ import org.springframework.data.domain.Pageable;
 public interface ProductRepository extends JpaRepository<Product, Integer>
 // , PagingAndSortingRepository<Product, Integer> 
 {
-    @Query("from Product p where p.searchkeys like %?1%")
-    List<Product> searchByTitle(String keys);
-
+    List<Product> findByPrio(Integer prio);
     List<Product> findByCategory(String category);
     Page<Product> findByCategory(String category, Pageable pageable);
+
+    @Query("from Product p where p.searchkeys like %?1%")
+    List<Product> searchByTitle(String keys);
 
     // @Query("SELECT p FROM Product p WHERE p.category = :category")
     // List<Product> productsOfCategory(@Param("category") String category);

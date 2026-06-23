@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.hong.ecommerce.ecomapi.domain.CartItem;
 import com.hong.ecommerce.ecomapi.domain.CartItemDTO;
 import com.hong.ecommerce.ecomapi.service.CartService;
-import com.hong.ecommerce.ecomapi.service.ProductServiceException;
+import com.hong.ecommerce.ecomapi.service.ProductServiceException; 
 
 @RestController
 @RequestMapping("/api/cart")
-public class CartController {
+public class CartController { 
     private CartService cartService; 
 
     public CartController(CartService cartService) {
         this.cartService = cartService;
     }
 
-    @GetMapping("/{uuId}")
-    public List<CartItem> getCart(@PathVariable String uuId) throws ProductServiceException {
-        return cartService.getCartByUuid(uuId);
+    @GetMapping("/{cartUuid}")
+    public List<CartItem> getCart(@PathVariable String cartUuid) throws ProductServiceException {
+        return cartService.getCartByUuid(cartUuid);
     }
 
     @PostMapping

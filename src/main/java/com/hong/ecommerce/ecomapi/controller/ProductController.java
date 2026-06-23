@@ -17,7 +17,7 @@ import org.springframework.data.web.PagedModel;
 
 import com.hong.ecommerce.ecomapi.domain.Product;
 import com.hong.ecommerce.ecomapi.service.ProductService;
-import com.hong.ecommerce.ecomapi.service.ProductServiceException;
+import com.hong.ecommerce.ecomapi.service.ProductServiceException; 
 
 @RestController
 @RequestMapping("/api/products")
@@ -31,6 +31,11 @@ public class ProductController {
     @GetMapping("/{productId}")
     public Product getProduct(@PathVariable int productId) throws ProductServiceException {
         return productService.getProduct(productId);
+    }
+
+    @GetMapping("/best")
+    public List<Product> bestProducts() throws ProductServiceException {  
+        return productService.bestProducts();
     }
 
     @GetMapping("/search")

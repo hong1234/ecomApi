@@ -39,6 +39,7 @@ public class Product {
     private int id;
     // private int productId;
     private String productUuid;
+    private Integer prio; 
 
     @NotBlank(message = "Title is required")
     @Size(min = 10, max = 100, message = "Title must be between 10 and 100 characters")

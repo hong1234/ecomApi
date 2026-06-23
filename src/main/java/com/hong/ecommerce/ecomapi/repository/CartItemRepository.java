@@ -11,7 +11,8 @@ import com.hong.ecommerce.ecomapi.domain.CartItem;
 
 public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
 
+    List<CartItem> findByCartUuid(String cartUuid);
+
     @Query("SELECT c FROM CartItem c WHERE c.cartUuid = :cartUuid")
     List<CartItem> itemsInCart(@Param("cartUuid") String cartUuid);
-
 }
