@@ -36,9 +36,10 @@ public class OrderService {
 
         OrderDTO order = new OrderDTO();
         order.setCartUuid(cartUuid);
+        order.setTotalPrice(total);
         order.setCustomerFname(rs.getCustomerFname());
         order.setCustomerLname(rs.getCustomerLname());
-        order.setTotalPrice(total);
+        order.setCustomerEmail(rs.getCustomerEmail());
         order.setItems(items);
         // return orderRepository.findByCartUuid(cartUuid).get(0);
         return order;
